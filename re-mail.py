@@ -12,7 +12,7 @@ class EmailValidator(QWidget):
 
     def initUI(self):
         # Configurar la ventana principal
-        self.setWindowTitle("Validador de correo de la Universidad Nacional de Loja")
+        self.setWindowTitle("Validador de correo en base a una expresión regular")
         self.setGeometry(300, 300, 550, 200)
 
         # Crear layout vertical
