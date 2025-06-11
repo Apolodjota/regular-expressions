@@ -14,7 +14,7 @@ def verificar():
 
 root = tk.Tk()
 root.title("Validador de correo de la Universidad Nacional de Loja")
-root.geometry("550x100")
+root.geometry("550x150")
 
 label = tk.Label(root, text="Ingrese su correo electrónico:")
 label.pack(pady=5)
