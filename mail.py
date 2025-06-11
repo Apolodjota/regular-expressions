@@ -1,35 +1,78 @@
-import tkinter as tk
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont
 import re
 
-def validate_email(email):
-    pattern = r'^[a-zA-Z0-9._%+-]+@unl\.edu$'
-    return re.match(pattern, email) is not None
 
-def verificar():
-    correo = entry.get()
-    if validate_email(correo):
-        resultado_label.config(text="Correo válido", fg="green")
-    else:
-        resultado_label.config(text="Correo inválido - Solo se acepta dominio @unl.edu", fg="red")
+class EmailValidator(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
 
-root = tk.Tk()
-root.title("Validador de correo de la Universidad Nacional de Loja")
-root.geometry("550x150")
+    def initUI(self):
+        # Configurar la ventana principal
+        self.setWindowTitle("Validador de correo de la Universidad Nacional de Loja")
+        self.setGeometry(300, 300, 550, 200)
 
-label = tk.Label(root, text="Ingrese su correo electrónico:")
-label.pack(pady=5)
+        # Crear layout vertical
+        layout = QVBoxLayout()
 
-entry = tk.Entry(root, width=35)
-entry.pack(pady=5)
+        # Etiqueta de instrucción
+        self.label = QLabel("Ingrese su correo electrónico:")
+        layout.addWidget(self.label)
 
-ejemplo_label = tk.Label(root, text="Ejemplo: romero.figueroa@unl.edu")
-ejemplo_label.pack(pady=5)
+        # Campo de entrada
+        self.entry = QLineEdit()
+        self.entry.setFixedWidth(300)
+        layout.addWidget(self.entry, alignment=Qt.AlignCenter)
+
+        # Etiqueta de ejemplo
+        self.ejemplo_label = QLabel("Ejemplo: romero.figueroa@unl.edu")
+        self.ejemplo_label.setStyleSheet("color: gray; font-style: italic;")
+        layout.addWidget(self.ejemplo_label, alignment=Qt.AlignCenter)
+
+        # Botón de verificar
+        self.verificar_btn = QPushButton("Verificar")
+        self.verificar_btn.clicked.connect(self.verificar)
+        self.verificar_btn.setFixedWidth(100)
+        layout.addWidget(self.verificar_btn, alignment=Qt.AlignCenter)
+
+        # Etiqueta de resultado
+        self.resultado_label = QLabel("")
+        self.resultado_label.setAlignment(Qt.AlignCenter)
+        font = QFont()
+        font.setBold(True)
+        self.resultado_label.setFont(font)
+        layout.addWidget(self.resultado_label)
+
+        # Aplicar layout a la ventana
+        self.setLayout(layout)
+
+        # Permitir que Enter active la verificación
+        self.entry.returnPressed.connect(self.verificar)
+
+    def validate_email(self, email):
+        pattern = r'^[a-z0-9]+[._\-&]{1}[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$'
+        return re.match(pattern, email) is not None
+
+    def verificar(self):
+        correo = self.entry.text()
+        if self.validate_email(correo):
+            self.resultado_label.setText("Correo válido")
+            self.resultado_label.setStyleSheet("color: green;")
+        else:
+            self.resultado_label.setText(
+                "Correo inválido - Solo se acepta dominio con la expresion regular: ^[a-z0-9]+@unl\\.edu$")
+            self.resultado_label.setStyleSheet("color: red;")
 
 
-verificar_btn = tk.Button(root, text="Verificar", command=verificar)
-verificar_btn.pack(pady=5)
+def main():
+    app = QApplication(sys.argv)
+    validator = EmailValidator()
+    validator.show()
+    sys.exit(app.exec_())
 
-resultado_label = tk.Label(root, text="")
-resultado_label.pack(pady=5)
 
-root.mainloop()
+if __name__ == '__main__':
+    main()
