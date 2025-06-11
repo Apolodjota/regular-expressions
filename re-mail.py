@@ -28,7 +28,7 @@ class EmailValidator(QWidget):
         layout.addWidget(self.entry, alignment=Qt.AlignCenter)
 
         # Etiqueta de ejemplo
-        self.ejemplo_label = QLabel("Ejemplo: romero.figueroa@unl.edu")
+        self.ejemplo_label = QLabel("Ejemplo: romer0.figu3roa@unl45.3du")
         self.ejemplo_label.setStyleSheet("color: gray; font-style: italic;")
         layout.addWidget(self.ejemplo_label, alignment=Qt.AlignCenter)
 

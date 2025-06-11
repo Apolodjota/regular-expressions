@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69db295a-8998-4f94-aeae-b511084f3870" name="Changes" comment="update all" />
+    <list default="true" id="69db295a-8998-4f94-aeae-b511084f3870" name="Changes" comment="final">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="a8843703-fc61-4ba3-96b4-6570017aa2ec" name="Changes by ismael" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749660784414</updated>
       <workItem from="1749660785459" duration="4984000" />
+      <workItem from="1749680491649" duration="961000" />
     </task>
     <task id="LOCAL-00001" summary="sadngkboi">
       <option name="closed" value="true" />
@@ -168,7 +171,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749665745308</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Final">
+      <option name="closed" value="true" />
+      <created>1749680676125</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1749680676125</updated>
+    </task>
+    <task id="LOCAL-00009" summary="final">
+      <option name="closed" value="true" />
+      <created>1749680725257</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749680725257</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +200,9 @@
     <MESSAGE value="update" />
     <MESSAGE value="update mail" />
     <MESSAGE value="update all" />
-    <option name="LAST_COMMIT_MESSAGE" value="update all" />
+    <MESSAGE value="Final" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/regular_expresions$mail.coverage" NAME="mail Coverage Results" MODIFIED="1749665247284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
