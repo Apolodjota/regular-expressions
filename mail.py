@@ -63,7 +63,7 @@ class EmailValidator(QWidget):
             self.resultado_label.setStyleSheet("color: green;")
         else:
             self.resultado_label.setText(
-                "Correo inválido - Solo se acepta dominio con la expresion regular: ^[a-z0-9]+@unl\\.edu$")
+                "Correo inválido - Solo se acepta dominio con la expresion regular: [a-z0-9]+[._\-&]{1}[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+")
             self.resultado_label.setStyleSheet("color: red;")
 
 

@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
-expresion = r'^01*[0+1]*$'
+expresion = r'^01*(0+1)*$'
 
 class ValidadorExpresion(QWidget):
     def __init__(self):
@@ -57,7 +57,7 @@ class ValidadorExpresion(QWidget):
     def validarCadena(self):
         cadena = self.inputCadena.text()
         if re.match(expresion, cadena):
-            QMessageBox.information(self, "Resultado", "✅ La cadena es VÁLIDA según 01*(0+1)*.")
+            QMessageBox.information(self, "Resultado", "✅ La cadena es VÁLIDA según ")
         else:
             QMessageBox.warning(self, "Resultado", "❌ La cadena NO cumple con la expresión 01*(0+1)*.")
 
