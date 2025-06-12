@@ -67,3 +67,8 @@ if __name__ == '__main__':
     ventana = ValidadorExpresion()
     ventana.show()
     sys.exit(app.exec_())
+
+
+
+
+
