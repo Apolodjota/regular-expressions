@@ -53,7 +53,7 @@ class EmailValidator(QWidget):
         self.entry.returnPressed.connect(self.verificar)
 
     def validate_email(self, email):
-        pattern = r'^[a-z0-9]+[._\-&]{1}[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$'
+        pattern = r'^[a-z0-9]*[._\-&]{1}[a-z0-9]*@[a-z0-9]+\.[a-z0-9]+$'
         return re.match(pattern, email) is not None
 
     def verificar(self):
